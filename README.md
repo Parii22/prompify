@@ -22,8 +22,11 @@
 | Resource | URL | Platform | Status |
 | :--- | :--- | :--- | :--- |
 | **Official Production Web App** | [https://prompify-ai.vercel.app](https://prompify-ai.vercel.app) | Vercel | 🟢 Live (Public) |
-| **GitHub Pages App** | [https://parii22.github.io/prompify/](https://parii22.github.io/prompify/) | GitHub Pages | 🟢 Live |
-| **GitHub Repository** | [github.com/Parii22/prompify](https://github.com/Parii22/prompify) | GitHub | 🟢 Public |
+| **Direct Prompt Studio Workspace** | [https://prompify-ai.vercel.app/app/workspace](https://prompify-ai.vercel.app/app/workspace) | Vercel | 🟢 Live (Public) |
+| **Refinement History & Benchmarks** | [https://prompify-ai.vercel.app/app/history](https://prompify-ai.vercel.app/app/history) | Vercel | 🟢 Live (Public) |
+| **Backend Health Check API** | [https://prompify-ai.vercel.app/api/health](https://prompify-ai.vercel.app/api/health) | Vercel | 🟢 Active |
+| **GitHub Pages Mirror** | [https://parii22.github.io/prompify/](https://parii22.github.io/prompify/) | GitHub Pages | 🟢 Live |
+| **GitHub Source Repository** | [https://github.com/Parii22/prompify](https://github.com/Parii22/prompify) | GitHub | 🟢 Public |
 | **1-Click Deploy on Vercel** | [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FParii22%2Fprompify) | Vercel | ⚡ Ready |
 
 ---

@@ -12,10 +12,16 @@ const isLocalhost =
     window.location.hostname === '127.0.0.1' ||
     window.location.hostname === '0.0.0.0');
 
+const isGitHubPages =
+  typeof window !== 'undefined' &&
+  window.location.hostname.endsWith('github.io');
+
 let API_BASE_URL = '/api';
 
 if (isLocalhost) {
   API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001/api';
+} else if (isGitHubPages) {
+  API_BASE_URL = 'https://prompify-ai.vercel.app/api';
 } else {
   // On deployed domains: only use VITE_API_BASE_URL if it is an explicit https URL
   if (
