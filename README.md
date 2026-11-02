@@ -3,14 +3,15 @@
 <div align="center">
 
 ![Prompify](https://img.shields.io/badge/Prompify-v1.0.0-8B5CF6?style=for-the-badge)
-[![Live Site](https://img.shields.io/badge/Live_Site-GitHub_Pages-22C55E?style=for-the-badge&logo=githubpages&logoColor=white)](https://parii22.github.io/prompify/)
+[![Vercel Deployment](https://img.shields.io/badge/Deployed-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://racing-aspen-oh3oh5i.tmp.now)
+[![GitHub Pages](https://img.shields.io/badge/Live_Site-GitHub_Pages-22C55E?style=for-the-badge&logo=githubpages&logoColor=white)](https://parii22.github.io/prompify/)
 [![GitHub](https://img.shields.io/badge/GitHub-Parii22%2Fprompify-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Parii22/prompify)
 [![Dual-LLM](https://img.shields.io/badge/Inference-Gemini%20%7C%20Groq-22D3EE?style=for-the-badge)](https://github.com/Parii22/prompify)
 [![Database](https://img.shields.io/badge/Database-Supabase%20PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com)
 
 **Transform vague raw ideas into production-grade prompts with dual-LLM fallback resilience, side-by-side benchmark execution, and automated 5-metric quantitative evaluation.**
 
-[🌐 Live Deployment (GitHub Pages)](https://parii22.github.io/prompify/) • [📂 GitHub Repository](https://github.com/Parii22/prompify) • [📖 Documentation](#table-of-contents)
+[🌐 Live Deployment (Vercel)](https://racing-aspen-oh3oh5i.tmp.now) • [🌐 Live Deployment (GitHub Pages)](https://parii22.github.io/prompify/) • [📂 GitHub Repository](https://github.com/Parii22/prompify) • [📖 Documentation](#table-of-contents)
 
 </div>
 
@@ -18,11 +19,12 @@
 
 ## 🚀 Live Deployments
 
-| Resource | URL | Status |
-| :--- | :--- | :--- |
-| **Official Live App (GitHub Pages)** | [https://parii22.github.io/prompify/](https://parii22.github.io/prompify/) | 🟢 Active & Public |
-| **GitHub Source Code** | [github.com/Parii22/prompify](https://github.com/Parii22/prompify) | 🟢 Public |
-| **1-Click Deploy on Vercel** | [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FParii22%2Fprompify) | ⚡ Ready |
+| Resource | URL | Platform | Status |
+| :--- | :--- | :--- | :--- |
+| **Production Web App** | [https://racing-aspen-oh3oh5i.tmp.now](https://racing-aspen-oh3oh5i.tmp.now) | Vercel | 🟢 Live |
+| **GitHub Pages App** | [https://parii22.github.io/prompify/](https://parii22.github.io/prompify/) | GitHub Pages | 🟢 Live |
+| **GitHub Repository** | [github.com/Parii22/prompify](https://github.com/Parii22/prompify) | GitHub | 🟢 Public |
+| **1-Click Deploy on Vercel** | [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FParii22%2Fprompify) | Vercel | ⚡ Ready |
 
 ---
 
