@@ -8,8 +8,13 @@ import { HistoryPage } from '../pages/HistoryPage.jsx';
 import { NotFoundPage } from '../pages/NotFoundPage.jsx';
 
 export function AppRoutes() {
+  const basename =
+    typeof window !== 'undefined' && window.location.pathname.startsWith('/prompify')
+      ? '/prompify'
+      : '/';
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         {/* Landing Page with Animated Shader Hero */}
         <Route path="/" element={<LandingPage />} />
