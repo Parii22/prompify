@@ -3,11 +3,30 @@
  * Uses VITE_API_BASE_URL defined in environment variables.
  */
 
-const defaultBaseUrl = typeof window !== 'undefined' && window.location.hostname !== 'localhost'
-  ? '/api'
-  : 'http://localhost:5001/api';
+// Determine the API base URL.
+// When running in the browser on a remote host (e.g. Vercel, GitHub Pages),
+// never fall back to localhost, as https-to-http requests trigger mixed-content blocks.
+const isLocalhost =
+  typeof window !== 'undefined' &&
+  (window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname === '0.0.0.0');
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || defaultBaseUrl;
+let API_BASE_URL = '/api';
+
+if (isLocalhost) {
+  API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001/api';
+} else {
+  // On deployed domains: only use VITE_API_BASE_URL if it is an explicit https URL
+  if (
+    import.meta.env.VITE_API_BASE_URL &&
+    import.meta.env.VITE_API_BASE_URL.startsWith('https://')
+  ) {
+    API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  } else {
+    API_BASE_URL = '/api';
+  }
+}
 
 /**
  * Custom error class for API errors

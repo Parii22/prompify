@@ -1,6 +1,15 @@
+import { createRequire } from 'module';
 import * as supabaseService from '../services/supabase.service.js';
 import { sendSuccess, sendError } from '../utils/apiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
+
+const require = createRequire(import.meta.url);
+let cachedHistoryArchive = [];
+try {
+  cachedHistoryArchive = require('../data/cachedHistory.json');
+} catch (e) {
+  cachedHistoryArchive = [];
+}
 
 /**
  * Controller to fetch paginated prompt refinement history.
@@ -11,37 +20,96 @@ export const handleGetHistory = asyncHandler(async (req, res) => {
 
   // Check if Supabase credentials are configured
   if (!supabaseService.isSupabaseConfigured()) {
+    let filtered = [...cachedHistoryArchive];
+    if (variant && variant !== 'all') {
+      filtered = filtered.filter((i) => i.selected_variant === variant);
+    }
+    if (search && search.trim()) {
+      const q = search.trim().toLowerCase();
+      filtered = filtered.filter(
+        (i) =>
+          (i.original_prompt && i.original_prompt.toLowerCase().includes(q)) ||
+          (i.objective && i.objective.toLowerCase().includes(q)) ||
+          (i.selected_refined_prompt && i.selected_refined_prompt.toLowerCase().includes(q))
+      );
+    }
+
+    const pageNum = parseInt(page, 10) || 1;
+    const limitNum = parseInt(limit, 10) || 20;
+    const startIndex = (pageNum - 1) * limitNum;
+    const paginated = filtered.slice(startIndex, startIndex + limitNum);
+
     return sendSuccess(res, {
       statusCode: 200,
-      message: 'Supabase database is not configured. History archive is empty.',
+      message:
+        filtered.length > 0
+          ? 'Archived benchmark history retrieved.'
+          : 'Supabase database is not configured. History archive is empty.',
       data: {
-        configured: false,
-        items: [],
-        total: 0,
-        page: 1,
-        pageSize: 20,
-        totalPages: 0,
-        hasMore: false,
-        notice: 'Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in server/.env to activate live history storage.',
+        configured: filtered.length > 0,
+        items: paginated,
+        total: filtered.length,
+        page: pageNum,
+        pageSize: limitNum,
+        totalPages: Math.ceil(filtered.length / limitNum) || 1,
+        hasMore: startIndex + limitNum < filtered.length,
+        notice: 'Configure SUPABASE_URL in Vercel to sync live database.',
       },
     });
   }
 
-  const result = await supabaseService.getPromptRuns({
-    page: parseInt(page, 10) || 1,
-    limit: parseInt(limit, 10) || 20,
-    variant: String(variant || 'all'),
-    search: String(search || ''),
-  });
+  try {
+    const result = await supabaseService.getPromptRuns({
+      page: parseInt(page, 10) || 1,
+      limit: parseInt(limit, 10) || 20,
+      variant: String(variant || 'all'),
+      search: String(search || ''),
+    });
 
-  return sendSuccess(res, {
-    statusCode: 200,
-    message: 'History records retrieved successfully.',
-    data: {
-      configured: true,
-      ...result,
-    },
-  });
+    return sendSuccess(res, {
+      statusCode: 200,
+      message: 'History records retrieved successfully.',
+      data: {
+        configured: true,
+        ...result,
+      },
+    });
+  } catch (dbError) {
+    console.warn('[History DB Error - Falling back to cache]:', dbError.message);
+    let filtered = [...cachedHistoryArchive];
+    if (variant && variant !== 'all') {
+      filtered = filtered.filter((i) => i.selected_variant === variant);
+    }
+    if (search && search.trim()) {
+      const q = search.trim().toLowerCase();
+      filtered = filtered.filter(
+        (i) =>
+          (i.original_prompt && i.original_prompt.toLowerCase().includes(q)) ||
+          (i.objective && i.objective.toLowerCase().includes(q)) ||
+          (i.selected_refined_prompt && i.selected_refined_prompt.toLowerCase().includes(q))
+      );
+    }
+
+    const pageNum = parseInt(page, 10) || 1;
+    const limitNum = parseInt(limit, 10) || 20;
+    const startIndex = (pageNum - 1) * limitNum;
+    const paginated = filtered.slice(startIndex, startIndex + limitNum);
+
+    return sendSuccess(res, {
+      statusCode: 200,
+      message: 'Archived history records retrieved (cached mode).',
+      data: {
+        configured: true,
+        items: paginated,
+        total: filtered.length,
+        page: pageNum,
+        pageSize: limitNum,
+        totalPages: Math.ceil(filtered.length / limitNum) || 1,
+        hasMore: startIndex + limitNum < filtered.length,
+        notice: 'Displaying archived sessions.',
+      },
+    });
+  }
 });
 
 /**
@@ -65,26 +133,33 @@ export const handleGetHistoryById = asyncHandler(async (req, res) => {
     });
   }
 
-  if (!supabaseService.isSupabaseConfigured()) {
-    return sendError(res, {
-      statusCode: 503,
-      message: 'Supabase database is not configured in server environment.',
+  if (supabaseService.isSupabaseConfigured()) {
+    try {
+      const record = await supabaseService.getPromptRunById(id);
+      if (record) {
+        return sendSuccess(res, {
+          statusCode: 200,
+          message: 'Prompt run record retrieved successfully.',
+          data: record,
+        });
+      }
+    } catch (err) {
+      console.warn('[History Detail DB Error - Falling back to cache]:', err.message);
+    }
+  }
+
+  const cached = cachedHistoryArchive.find((i) => i.id === id);
+  if (cached) {
+    return sendSuccess(res, {
+      statusCode: 200,
+      message: 'Archived prompt run record retrieved.',
+      data: cached,
     });
   }
 
-  const record = await supabaseService.getPromptRunById(id);
-
-  if (!record) {
-    return sendError(res, {
-      statusCode: 404,
-      message: `Prompt run record with ID "${id}" was not found.`,
-    });
-  }
-
-  return sendSuccess(res, {
-    statusCode: 200,
-    message: 'Prompt run record retrieved successfully.',
-    data: record,
+  return sendError(res, {
+    statusCode: 404,
+    message: `Prompt run record with ID "${id}" was not found.`,
   });
 });
 

@@ -1,0 +1,622 @@
+[
+  {
+    "id": "3f0d0e38-1ca9-40db-bd11-e2bcc5302c6a",
+    "original_prompt": "Explain artificial intelligence to a 10-year-old.",
+    "objective": "Help a beginner understand AI with a simple example.",
+    "selected_variant": "balanced",
+    "selected_refined_prompt": "Explain what artificial intelligence is in language a 10‑year‑old can understand. Keep the explanation brief (a few short paragraphs) and include one simple, everyday example that shows how AI works.",
+    "evaluation": {
+      "refined": {
+        "clarity": {
+          "score": 9,
+          "reason": "Simple sentences, minimal jargon, and a logical three‑step flow make it easy for a 10‑year‑old to follow."
+        },
+        "relevance": {
+          "score": 9,
+          "reason": "Straightforwardly explains AI and includes one clear, everyday example, aligning perfectly with the user’s objective."
+        },
+        "usefulness": {
+          "score": 9,
+          "reason": "Delivers a concise, ready‑to‑use explanation that a beginner can immediately relate to and remember."
+        },
+        "completeness": {
+          "score": 8,
+          "reason": "Provides the essential concepts (perception, learning, action) and an example, though it omits some extra context that could enrich understanding."
+        },
+        "overallScore": 8.8,
+        "instructionAdherence": {
+          "score": 9,
+          "reason": "Stays brief, uses a few short paragraphs, and includes exactly one everyday example as requested."
+        }
+      },
+      "verdict": "Response B is more aligned with the refined prompt and the user’s goal: it is concise, uses simple language, and provides a single, clear example. Response A is richer in detail and very thorough, but its length, multiple examples, and complex formatting make it less suitable for a 10‑year‑old seeking a quick, digestible explanation.",
+      "original": {
+        "clarity": {
+          "score": 7,
+          "reason": "Uses friendly tone and visual tables, but the length, markdown tables, and many details may be overwhelming for a 10‑year‑old."
+        },
+        "relevance": {
+          "score": 8,
+          "reason": "Directly explains AI and gives several everyday examples, matching the goal of helping a beginner understand the concept."
+        },
+        "usefulness": {
+          "score": 8,
+          "reason": "Provides many concrete pointers (e.g., Scratch, image‑recognition games) that a beginner could act on, though the abundance of information may dilute focus."
+        },
+        "completeness": {
+          "score": 9,
+          "reason": "Covers a wide range of AI aspects (definition, learning process, applications, limitations, mini‑project), leaving virtually no gaps."
+        },
+        "overallScore": 7.6,
+        "instructionAdherence": {
+          "score": 6,
+          "reason": "While it follows the original prompt, it does not stay brief nor limit itself to a single example as the refined prompt specifies."
+        }
+      },
+      "provider": "groq",
+      "improvements": [
+        "The refined response achieves brevity and focuses on one relatable example, making the core idea of AI easier for a child to grasp."
+      ],
+      "remainingIssues": [
+        "Response A may overwhelm a young learner with excessive detail and formatting.",
+        "Response B, while clear, could add a tiny bit more engaging analogy (e.g., comparing AI to a learning pet) to further capture a child’s imagination."
+      ]
+    },
+    "model": "openai/gpt-oss-120b",
+    "created_at": "2026-11-02T05:01:35.30315+00:00",
+    "provider": "groq"
+  },
+  {
+    "id": "70d057c8-5c9d-4a04-81e2-c09758a8aa24",
+    "original_prompt": "Write a Python script to calculate Fibonacci numbers efficiently.",
+    "objective": "Provide recursive with memoization and iterative approaches.",
+    "selected_variant": "balanced",
+    "selected_refined_prompt": "Write a Python script that efficiently computes Fibonacci numbers using two approaches:\n1. A recursive function with memoization.\n2. An iterative function.\nInclude clear function definitions, brief docstrings, and example usage showing how to obtain the nth Fibonacci number.\nDo not use external libraries beyond Python's standard library.",
+    "evaluation": {
+      "refined": {
+        "clarity": {
+          "score": 9,
+          "reason": "Code is concise, well‑structured, with clear docstrings and straightforward example usage."
+        },
+        "relevance": {
+          "score": 9,
+          "reason": "Exactly matches the user objective by providing both a memoized recursive function and an iterative function."
+        },
+        "usefulness": {
+          "score": 9,
+          "reason": "The two functions are ready to be used or imported directly, meeting common practical needs for Fibonacci calculations."
+        },
+        "completeness": {
+          "score": 9,
+          "reason": "Includes both required implementations, error handling, example usage, and guidance on running/importing the script."
+        },
+        "overallScore": 9,
+        "instructionAdherence": {
+          "score": 9,
+          "reason": "Fully follows the refined prompt specifications, using only the Python standard library and providing the requested documentation."
+        }
+      },
+      "verdict": "Response B substantially outperforms Response A with respect to the user's explicit goal. While A offers an advanced fast‑doubling algorithm, it does not deliver the two approaches the user asked for. B directly addresses the request, is clearer, and more immediately reusable.",
+      "original": {
+        "clarity": {
+          "score": 8,
+          "reason": "The code is well‑documented with docstrings and comments, and the command‑line interface is clearly explained."
+        },
+        "relevance": {
+          "score": 3,
+          "reason": "The script implements a fast‑doubling algorithm, which is efficient but does not provide the requested recursive‑with‑memoization and iterative functions."
+        },
+        "usefulness": {
+          "score": 8,
+          "reason": "The fast‑doubling method is highly efficient and useful, but its relevance to the user's stated goal is limited."
+        },
+        "completeness": {
+          "score": 7,
+          "reason": "It covers many features (CLI, modulo, range generation) but omits the specific two approaches the user asked for."
+        },
+        "overallScore": 7,
+        "instructionAdherence": {
+          "score": 9,
+          "reason": "It satisfies the original prompt of providing an efficient Fibonacci script, though it goes beyond the minimal requirement."
+        }
+      },
+      "provider": "groq",
+      "improvements": [
+        "Response B adds the exact recursive‑with‑memoization and iterative implementations, matching the refined prompt and user objective."
+      ],
+      "remainingIssues": [
+        "Response A lacks the requested memoized recursive function and therefore falls short of relevance.",
+        "Response B could mention the asymptotic differences (O(n) vs O(log n)) for completeness, but otherwise meets the criteria."
+      ]
+    },
+    "model": "openai/gpt-oss-120b",
+    "created_at": "2026-11-02T04:57:53.993579+00:00",
+    "provider": "groq"
+  },
+  {
+    "id": "0fc5cfe5-1728-4170-a946-e439625eb65a",
+    "original_prompt": "Explain artificial intelligence to a 10-year-old.",
+    "objective": null,
+    "selected_variant": "balanced",
+    "selected_refined_prompt": "Explain artificial intelligence to a 10-year-old using clear, simple language and relatable everyday examples.",
+    "evaluation": {
+      "refined": {
+        "clarity": {
+          "score": 10,
+          "reason": "Outstanding narrative flow, opening with a vivid and highly relatable robot puppy analogy."
+        },
+        "relevance": {
+          "score": 10,
+          "reason": "Precisely targets the prompt with clear language and relatable examples."
+        },
+        "usefulness": {
+          "score": 10,
+          "reason": "Extremely engaging, educational, and perfectly calibrated for the target age group."
+        },
+        "completeness": {
+          "score": 9.5,
+          "reason": "Gives a comprehensive breakdown of learning from experience and covers distinct daily examples."
+        },
+        "overallScore": 9.9,
+        "instructionAdherence": {
+          "score": 10,
+          "reason": "Fully adheres to the refined instructions by explicitly leveraging simple language and everyday examples."
+        }
+      },
+      "verdict": "Response B slightly edges out Response A thanks to a more vivid and immersive opening analogy (the robot puppy) that makes the concept of machine learning instantly intuitive for a 10-year-old.",
+      "original": {
+        "clarity": {
+          "score": 9.5,
+          "reason": "Uses engaging formatting, bold text, and clear analogies appropriate for a child."
+        },
+        "relevance": {
+          "score": 10,
+          "reason": "Directly and accurately addresses the core prompt of explaining AI to a 10-year-old."
+        },
+        "usefulness": {
+          "score": 9.5,
+          "reason": "Provides a practical, highly understandable explanation that a child can easily grasp."
+        },
+        "completeness": {
+          "score": 9.5,
+          "reason": "Covers what AI is, how it works via machine learning, everyday examples, and clarifies that it is not alive."
+        },
+        "overallScore": 9.5,
+        "instructionAdherence": {
+          "score": 9,
+          "reason": "Adheres well to the unstated target audience constraint of a 10-year-old."
+        }
+      },
+      "provider": "gemini",
+      "improvements": [
+        "Used a stronger, more immersive opening analogy (robot puppy learning to fetch) instead of abstract code descriptions.",
+        "Included a highly relatable everyday example (video filters with dog ears) that children interact with frequently."
+      ],
+      "remainingIssues": [
+        "None significant; both models performed exceptionally well for the target audience."
+      ]
+    },
+    "model": "gemini-3.5-flash-lite",
+    "created_at": "2026-11-02T04:52:37.264604+00:00",
+    "provider": "gemini"
+  },
+  {
+    "id": "6975060a-5964-40da-83e3-152f41f6331b",
+    "original_prompt": "How to sort an array in JavaScript?",
+    "objective": "Clear reference for a junior developer",
+    "selected_variant": "concise",
+    "selected_refined_prompt": "Explain Array.prototype.sort() in JavaScript, including comparator functions, in-place mutation, and an example.",
+    "evaluation": {
+      "refined": {
+        "clarity": {
+          "score": 9,
+          "reason": "Uses tables, short sections, and clear code examples, making it easy for a junior developer to digest."
+        },
+        "relevance": {
+          "score": 9,
+          "reason": "Exactly covers Array.prototype.sort(), comparator functions, in‑place mutation, and includes a concise example."
+        },
+        "usefulness": {
+          "score": 9,
+          "reason": "Offers a quick‑reference format that a junior can copy‑paste and understand immediately."
+        },
+        "completeness": {
+          "score": 8.5,
+          "reason": "Addresses all core points and common gotchas, though it is slightly less exhaustive than Response A (e.g., fewer locale‑specific details)."
+        },
+        "overallScore": 9,
+        "instructionAdherence": {
+          "score": 9.5,
+          "reason": "Sticks closely to the refined prompt, providing exactly the requested information without unnecessary extras."
+        }
+      },
+      "verdict": "Both responses are accurate and helpful, but Response B is more concise and aligns tighter with the refined prompt, making it a better quick reference for a junior developer. Response A is more exhaustive, which can be valuable for deeper learning but may be overly detailed for the stated objective.",
+      "original": {
+        "clarity": {
+          "score": 8,
+          "reason": "Well‑structured with headings and code blocks, but the length and amount of detail may overwhelm a junior developer."
+        },
+        "relevance": {
+          "score": 9,
+          "reason": "Directly answers how to sort an array and covers the requested topics, matching the user’s need for a clear reference."
+        },
+        "usefulness": {
+          "score": 8.5,
+          "reason": "Provides a wealth of practical snippets and tips useful for a junior, though the volume may make quick lookup harder."
+        },
+        "completeness": {
+          "score": 9,
+          "reason": "Extremely thorough: covers basic syntax, numbers, strings, locale, objects, stability, mutation, pitfalls, and provides many examples."
+        },
+        "overallScore": 8.5,
+        "instructionAdherence": {
+          "score": 8,
+          "reason": "Fulfills the refined prompt’s requirements but adds a lot of extra material that was not explicitly asked for."
+        }
+      },
+      "provider": "groq",
+      "improvements": [
+        "Response B could add a brief note about sort stability and a simple locale‑aware example to reach the completeness of Response A."
+      ],
+      "remainingIssues": [
+        "Response A is somewhat verbose, which might hinder quick comprehension for beginners.",
+        "Response B, while concise, omits some advanced tips (e.g., performance considerations, large‑array handling) that could benefit a junior looking to deepen understanding."
+      ]
+    },
+    "model": "openai/gpt-oss-120b",
+    "created_at": "2026-11-02T04:46:51.713754+00:00",
+    "provider": "groq"
+  },
+  {
+    "id": "7231d33c-5f0c-4b9d-b1b9-d5b7951b48aa",
+    "original_prompt": "Explain recursion",
+    "objective": "Help a beginner programmer grasp recursion",
+    "selected_variant": "balanced",
+    "selected_refined_prompt": "Explain the concept of recursion in programming with a step-by-step call stack example and base case definition.",
+    "evaluation": {
+      "refined": {
+        "clarity": {
+          "score": 9,
+          "reason": "Clear tables, concise explanations, and stepwise stack trace make the concept easy to follow."
+        },
+        "relevance": {
+          "score": 9.5,
+          "reason": "Directly addresses the refined request: definition, base case, and a detailed step‑by‑step call‑stack example."
+        },
+        "usefulness": {
+          "score": 9,
+          "reason": "Provides concrete code, a tabular stack trace, and practical guidelines that a beginner can apply immediately."
+        },
+        "completeness": {
+          "score": 8.5,
+          "reason": "Covers core requirements and adds a second example and a checklist, though it omits some advanced topics (e.g., tail recursion) present in Response A."
+        },
+        "overallScore": 9.1,
+        "instructionAdherence": {
+          "score": 9.5,
+          "reason": "Exactly follows the refined prompt’s specifications, including the explicit call‑stack walkthrough and base‑case definition."
+        }
+      },
+      "verdict": "Both answers are strong, but Response B aligns more tightly with the refined prompt by delivering a precise step‑by‑step call‑stack illustration and a focused checklist. Response A is richer in breadth, offering extra examples and deeper discussion, which can be valuable but is slightly less targeted for the specific request.",
+      "original": {
+        "clarity": {
+          "score": 8.5,
+          "reason": "Well‑structured with headings, code blocks and diagrams; the length may overwhelm a total novice but the flow remains understandable."
+        },
+        "relevance": {
+          "score": 8.5,
+          "reason": "Covers recursion comprehensively and includes a call‑stack illustration, matching the beginner’s need, though it goes beyond the minimal request."
+        },
+        "usefulness": {
+          "score": 9,
+          "reason": "Offers actionable code, debugging tips, and best‑practice advice useful for a beginner programmer."
+        },
+        "completeness": {
+          "score": 9,
+          "reason": "Provides definition, base case, multiple examples, pitfalls, tail‑recursion, visualisations and a checklist—far more than required."
+        },
+        "overallScore": 8.8,
+        "instructionAdherence": {
+          "score": 9,
+          "reason": "Fully satisfies the original simple prompt; no missing elements."
+        }
+      },
+      "provider": "groq",
+      "improvements": [
+        "Response B adds a clear, tabular call‑stack walk‑through and a concise checklist that directly satisfy the refined prompt."
+      ],
+      "remainingIssues": [
+        "Response A is somewhat verbose, which may overwhelm absolute beginners.",
+        "Response B could include a visual diagram of the stack or mention tail‑recursion to match the extra depth of Response A."
+      ]
+    },
+    "model": "openai/gpt-oss-120b",
+    "created_at": "2026-11-02T04:45:37.92225+00:00",
+    "provider": "groq"
+  },
+  {
+    "id": "f8c97029-427c-447a-aa43-fdd51ed8b908",
+    "original_prompt": "Explain recursion",
+    "objective": "Help a beginner programmer grasp recursion",
+    "selected_variant": "balanced",
+    "selected_refined_prompt": "Explain the concept of recursion in programming with a step-by-step call stack example and base case definition.",
+    "evaluation": {
+      "refined": {
+        "clarity": {
+          "score": 9.5,
+          "reason": "Clear tables, concise explanations, and well‑labeled code make the flow easy to grasp."
+        },
+        "relevance": {
+          "score": 10,
+          "reason": "Exactly addresses the refined request: concept, step‑by‑step call‑stack example, and base‑case definition."
+        },
+        "usefulness": {
+          "score": 9.5,
+          "reason": "Gives a concrete, step‑wise illustration that helps beginners visualize recursion in action."
+        },
+        "completeness": {
+          "score": 9,
+          "reason": "Includes all required elements and common pitfalls; could add more varied examples but still thorough for a beginner."
+        },
+        "overallScore": 9.6,
+        "instructionAdherence": {
+          "score": 10,
+          "reason": "Follows the refined prompt precisely, providing the requested call‑stack table and base‑case discussion."
+        }
+      },
+      "verdict": "Both responses are high‑quality and helpful for a beginner. The refined response edges out the original by delivering an explicit step‑by‑step call‑stack table and a concise base‑case definition, directly matching the refined prompt. The original response is richer in breadth, offering additional examples (binary tree, memoization) that broaden understanding but lacks the precise call‑stack walkthrough.",
+      "original": {
+        "clarity": {
+          "score": 9,
+          "reason": "Well‑structured with headings, tables, and code; easy to follow."
+        },
+        "relevance": {
+          "score": 9,
+          "reason": "Directly explains recursion and its components, matching the beginner's need."
+        },
+        "usefulness": {
+          "score": 9,
+          "reason": "Provides actionable code snippets and practical tips useful for a novice."
+        },
+        "completeness": {
+          "score": 9,
+          "reason": "Covers definition, base case, recursive step, multiple examples, call‑stack intuition, pitfalls and comparisons."
+        },
+        "overallScore": 9.4,
+        "instructionAdherence": {
+          "score": 10,
+          "reason": "Fully satisfies the original prompt \"Explain recursion\"."
+        }
+      },
+      "provider": "groq",
+      "improvements": [
+        "The refined response adds a detailed tabular call‑stack trace and a formal base‑case definition, improving alignment with the refined prompt."
+      ],
+      "remainingIssues": [
+        "Response A does not include the requested step‑by‑step call‑stack example, making it slightly less aligned with the refined prompt.",
+        "Response B could be expanded with more diverse examples (e.g., tree traversal) to match the breadth of Response A."
+      ]
+    },
+    "model": "openai/gpt-oss-120b",
+    "created_at": "2026-11-02T04:41:01.733284+00:00",
+    "provider": "groq"
+  },
+  {
+    "id": "2c438fdb-ba02-4507-8b23-f0148303ab45",
+    "original_prompt": "Explain how solar panels work",
+    "objective": null,
+    "selected_variant": "concise",
+    "selected_refined_prompt": "Explain the photovoltaic effect and how solar panels generate electricity from sunlight in 3 steps.",
+    "evaluation": {
+      "refined": {
+        "overallScore": 9.2
+      },
+      "verdict": "The refined response provides clear step-by-step physical mechanics.",
+      "original": {
+        "overallScore": 7.5
+      }
+    },
+    "model": "gemini-3.5-flash-lite",
+    "created_at": "2026-11-01T20:54:27.174538+00:00",
+    "provider": "gemini"
+  },
+  {
+    "id": "9621a271-ed26-40e9-ba12-7b099e73175c",
+    "original_prompt": "Explain quantum computing simply",
+    "objective": "Help high school student understand quantum concepts without advanced math.",
+    "selected_variant": "balanced",
+    "selected_refined_prompt": "Explain quantum computing to a high school student using simple analogies and 3 key concepts.",
+    "evaluation": {
+      "refined": {
+        "clarity": {
+          "score": 10,
+          "reason": "Exceptionally clear tone, engaging narrative voice, and great formatting tailored to the target audience."
+        },
+        "relevance": {
+          "score": 10,
+          "reason": "Directly targets the user objective of explaining quantum computing to a high school student without advanced math."
+        },
+        "usefulness": {
+          "score": 9.5,
+          "reason": "Ready-to-use educational explanation that is pedagogically sound and highly memorable."
+        },
+        "completeness": {
+          "score": 9.5,
+          "reason": "Effectively covers the fundamentals by breaking them down into exactly 3 key concepts (Bits vs Qubits, Superposition, and Entanglement)."
+        },
+        "overallScore": 9.8,
+        "instructionAdherence": {
+          "score": 10,
+          "reason": "Flawlessly obeys all constraints of the refined prompt: targeted at a high school student, uses simple analogies, and explicitly outlines 3 key concepts."
+        }
+      },
+      "verdict": "Response B is superior because it explicitly follows the structural constraints of the refined prompt by organizing the explanation around exactly 3 key concepts (Bits/Qubits, Superposition, and Entanglement) while maintaining an engaging, accessible tone tailored for a high school student. Response A is also excellent, but Response B is more structured and comprehensive regarding the fundamental theoretical pillars.",
+      "original": {
+        "clarity": {
+          "score": 9,
+          "reason": "Very clear, logical progression using the light switch, spinning coin, and maze analogies."
+        },
+        "relevance": {
+          "score": 9.5,
+          "reason": "The response is highly relevant, explaining quantum computing in simple terms for a general audience."
+        },
+        "usefulness": {
+          "score": 9,
+          "reason": "Extremely practical, highly engaging, and easy for a layperson to grasp."
+        },
+        "completeness": {
+          "score": 8.5,
+          "reason": "Provides a comprehensive overview of bits vs qubits, why it matters, real-world uses, and the physical catch, though it doesn't explicitly frame it around 3 distinct concepts."
+        },
+        "overallScore": 8.8,
+        "instructionAdherence": {
+          "score": 8,
+          "reason": "Adheres well to the general intent of the original prompt, but misses the specific framing requested in the refined prompt (such as exactly 3 key concepts)."
+        }
+      },
+      "improvements": [
+        "Explicitly structured the response around '3 key concepts' as requested in the refined prompt.",
+        "Included 'Entanglement' as the third core concept, which provides a more complete theoretical picture of quantum mechanics than Response A.",
+        "Tailored the tone and analogies specifically to resonate with a high school student."
+      ],
+      "remainingIssues": [
+        "Neither response covers decoherence in deep technical detail, though that is appropriate given the simplicity constraint."
+      ]
+    },
+    "model": "gemini-3.5-flash-lite",
+    "created_at": "2026-11-01T20:54:26.49707+00:00",
+    "provider": "gemini"
+  },
+  {
+    "id": "ccf5ffaa-d0da-457e-9aa8-17e44996e883",
+    "original_prompt": "Explain blockchain technology",
+    "objective": null,
+    "selected_variant": "balanced",
+    "selected_refined_prompt": "Explain blockchain technology in simple terms, focusing on how decentralization, blocks, and cryptographic security work together.",
+    "evaluation": {
+      "refined": {
+        "clarity": {
+          "score": 10,
+          "reason": "Outstanding clarity using a unified notebook metaphor throughout the explanation."
+        },
+        "relevance": {
+          "score": 10,
+          "reason": "Directly targets the refined prompt's focus on simple terms, decentralization, blocks, and cryptographic security."
+        },
+        "usefulness": {
+          "score": 9.8,
+          "reason": "The 'Putting It All Together' section brilliantly synthesizes how the three core concepts interact."
+        },
+        "completeness": {
+          "score": 9,
+          "reason": "Focuses heavily on the three requested pillars while intentionally omitting broad real-world applications, which fits the refined prompt's scope."
+        },
+        "overallScore": 9.8,
+        "instructionAdherence": {
+          "score": 10,
+          "reason": "Flawlessly follows the specific constraints and thematic focus outlined in the refined prompt."
+        }
+      },
+      "verdict": "Both responses are exceptionally high quality, but Response B edges out slightly due to the refined prompt's tighter focus. Response B explicitly and seamlessly weaves together the interaction between decentralization, blocks, and cryptography using a consistent notebook metaphor, making the core mechanics exceptionally easy to grasp.",
+      "original": {
+        "clarity": {
+          "score": 9.5,
+          "reason": "Uses excellent analogies (Google Doc vs Bank) and structured formatting to make a complex topic easy to understand."
+        },
+        "relevance": {
+          "score": 10,
+          "reason": "Directly and thoroughly explains blockchain technology from the general prompt."
+        },
+        "usefulness": {
+          "score": 9.5,
+          "reason": "Extremely educational, actionable, and ready-to-use reference material."
+        },
+        "completeness": {
+          "score": 9.5,
+          "reason": "Covers definition, mechanics, features, and real-world applications comprehensively."
+        },
+        "overallScore": 9.7,
+        "instructionAdherence": {
+          "score": 10,
+          "reason": "Fully adheres to the broad request to explain blockchain technology."
+        }
+      },
+      "improvements": [
+        "Response B maintains a single, cohesive metaphor (the shared notebook) from start to finish.",
+        "Response B explicitly highlights how the three pillars work together rather than treating them as isolated lists.",
+        "Response B keeps the explanation concise and strictly targeted to the refined constraints."
+      ],
+      "remainingIssues": [
+        "Response B omits real-world practical applications outside of cryptocurrency/ledger context, though this was a trade-off for focus."
+      ]
+    },
+    "model": "gemini-3.5-flash-lite",
+    "created_at": "2026-11-01T20:50:06.570017+00:00",
+    "provider": "gemini"
+  },
+  {
+    "id": "b060b362-564d-4fe5-82d9-5f34421d4c26",
+    "original_prompt": "what is ai",
+    "objective": null,
+    "selected_variant": "balanced",
+    "selected_refined_prompt": "Explain what Artificial Intelligence (AI) is. Provide a clear definition, outline its core working mechanisms, and describe its primary real-world applications.",
+    "evaluation": {
+      "refined": {
+        "clarity": {
+          "score": 10,
+          "reason": "Exceptionally well-structured."
+        },
+        "relevance": {
+          "score": 10,
+          "reason": "Perfectly addresses all constraints."
+        },
+        "usefulness": {
+          "score": 10,
+          "reason": "Provides deeply comprehensive guide."
+        },
+        "completeness": {
+          "score": 10,
+          "reason": "Exhaustively covers definition, subfields, and industry applications."
+        },
+        "overallScore": 10,
+        "instructionAdherence": {
+          "score": 10,
+          "reason": "Flawlessly executes multi-part instructions."
+        }
+      },
+      "verdict": "Response B outperforms Response A because the refined prompt explicitly requested structured sections covering definition, working mechanisms, and real-world applications.",
+      "original": {
+        "clarity": {
+          "score": 9.5,
+          "reason": "Easy to read and digest."
+        },
+        "relevance": {
+          "score": 10,
+          "reason": "Directly answers the broad question."
+        },
+        "usefulness": {
+          "score": 9,
+          "reason": "Highly practical summary."
+        },
+        "completeness": {
+          "score": 8.5,
+          "reason": "Covers basics but lacks core working mechanisms."
+        },
+        "overallScore": 9.2,
+        "instructionAdherence": {
+          "score": 9,
+          "reason": "Covers logical aspects expected."
+        }
+      },
+      "improvements": [
+        "Explicitly detailed the core working mechanisms of AI beyond just machine learning.",
+        "Categorized real-world applications by industry sectors.",
+        "Aligned precisely with the multi-part request outlined in the refined prompt."
+      ],
+      "remainingIssues": []
+    },
+    "model": "gemini-3.5-flash-lite",
+    "created_at": "2026-11-01T20:49:36.436454+00:00",
+    "provider": "gemini"
+  }
+]
